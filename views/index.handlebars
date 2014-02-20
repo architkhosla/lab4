@@ -15,7 +15,14 @@
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->        
+    <![endif]-->       
+		<script>
+			function myFunction()
+			{
+			var search_txt = document.getElementById("search_box").value;
+			window.location.replace("http://localhost:3000/project/" + search_txt);
+			}
+		</script>
 </head>
 
 <body>
@@ -23,8 +30,10 @@
 		<!-- h1 through h6 are headers. The higher the number, the smaller the header -->
 		<!-- p means paragraph -->
 		<div class="jumbotron">
-			<h1>Michael Bernstein</h1>
+			<h1 id="abc">Michael Bernstein</h1>
 			<p>human-computer interaction &middot; social computing &middot; crowdsourcing</p>
+			<input type="text" value="Fries" name="searchbox" id="search_box">
+			 <input type="submit" value="Submit" id="submit_bttn" onclick="myFunction()">
 		</div>
 		
 		<ol>

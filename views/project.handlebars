@@ -19,7 +19,7 @@
 	<!-- this is a comment in HTML -->
 	<div class="container">
 		<div class="jumbotron">
-  			<h1>{{projectName}}</h1>
+  			<h1>Item: {{projectName}}</h1>
   			<p>one-sentence description of project</p>
 		</div>
 
@@ -28,6 +28,15 @@
 		<p>Phasellus at neque eget sapien elementum sollicitudin. In odio mauris, pulvinar quis turpis sed, faucibus tristique leo. Phasellus a volutpat tortor. Nunc blandit imperdiet iaculis. Nam purus orci, placerat in venenatis ut, ultrices id dolor. Duis ornare erat lectus, at posuere justo mollis eu. Duis dictum feugiat imperdiet. Praesent vitae orci in eros semper lacinia a ut arcu. Cras vitae sapien et erat faucibus imperdiet nec a turpis. Integer at egestas ipsum, sed suscipit eros.</p>
 
     <div class="row">
+	
+	
+		<div>
+			{{#each restraunts}}
+			  <p><a href="#{{id}}">{{name}}</a></p>
+			{{/each}}
+		</div>
+		
+		
       <div class="col-md-6">
         <table class="table">
           <thead>
