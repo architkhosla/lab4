@@ -6,8 +6,9 @@ exports.viewProject = function(req, res) {
 	'projectName': name,
     'restraunts': [
       { 'name': 'Waiting in Line',
-        'image': 'lorempixel.people.1.jpeg',
-        'id': 'project1'
+        'id': 'project1',
+		'description': 'Best restraunt',
+		'price': '44.00'
       },
       { 'name': 'Needfinding',
         'image': 'lorempixel.city.1.jpeg',

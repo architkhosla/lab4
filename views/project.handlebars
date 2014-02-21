@@ -16,54 +16,86 @@
     <![endif]-->
   </head>
   <body>
-	<!-- this is a comment in HTML -->
+  
+  <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="../">FoodApp</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class=""><a href="../">Home</a></li>
+            <li><a href="../">Cart</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </div>
+	<br><br><br>
+		
+		
+		<div class="row">
+		  <div class="col-lg-6">
+			<div class="input-group">
+			  <input type="text" class="form-control" placeholder="Search Item" id="search_box">
+			  <span class="input-group-btn">
+				<button class="btn btn-default" type="button" onclick="myFunction()">Go!</button>
+			  </span>
+			</div>
+		  </div>
+		</div>
+		
+	
 	<div class="container">
 		<div class="jumbotron">
-  			<h1>Item: {{projectName}}</h1>
-  			<p>one-sentence description of project</p>
+  			<h1 align="center" >Item: <strong>{{projectName}}</strong></h1>
+  			
 		</div>
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus enim diam, adipiscing sodales sem ut, tristique suscipit odio. Nam mollis ipsum et venenatis euismod. Aliquam erat volutpat. Praesent placerat condimentum tristique. Morbi egestas dapibus viverra. Mauris sit amet dignissim risus, non elementum eros. Donec urna dui, placerat et feugiat non, vulputate in ipsum. Quisque dignissim pulvinar nisi. Quisque feugiat commodo dolor nec suscipit. Donec pretium scelerisque aliquet. Vivamus vitae turpis metus. Sed lobortis vitae orci sed gravida. Donec euismod ipsum sagittis pellentesque pellentesque. Aenean at lorem nec leo consequat tincidunt. Maecenas sit amet felis vel ante dictum suscipit quis nec magna. Sed augue velit, imperdiet quis mi a, porta aliquet urna.</p>
-
-		<p>Phasellus at neque eget sapien elementum sollicitudin. In odio mauris, pulvinar quis turpis sed, faucibus tristique leo. Phasellus a volutpat tortor. Nunc blandit imperdiet iaculis. Nam purus orci, placerat in venenatis ut, ultrices id dolor. Duis ornare erat lectus, at posuere justo mollis eu. Duis dictum feugiat imperdiet. Praesent vitae orci in eros semper lacinia a ut arcu. Cras vitae sapien et erat faucibus imperdiet nec a turpis. Integer at egestas ipsum, sed suscipit eros.</p>
-
-    <div class="row">
-	
-	
-		<div>
-			{{#each restraunts}}
-			  <p><a href="#{{id}}">{{name}}</a></p>
-			{{/each}}
-		</div>
 		
+    <div class="row">
 		
       <div class="col-md-6">
+	  
         <table class="table">
-          <thead>
-            <tr>
-              <th>User</td>
-              <th>Salient need</td>
-            </tr>
-          </thead>
+          <img src="../images/abc2.jpg" class="img-responsive center-block"  >
+		  <br>
           <tbody>
+		  {{#each restraunts}}
             <tr>
-              <td>Schoolteacher</td>
-              <td>Wants to know what music students are listening to so he can integrate it into his lessons.</td>
+              <td>{{name}}</td>
+             <td>
+				<div>
+					<strong>Description: </strong>{{description}}
+				</div>
+				<div>
+					<strong>Price: </strong>${{price}}
+				</div>
+				<div>
+					<strong>Rating: </strong><img src="../images/stars.png" class="img" width="60">
+				</div>
+				
+				<div >
+				<a class="btn btn-danger btn-xs" href="#" align="right">Add</a>
+				</div>
+			</td>
             </tr>
-            <tr>
-              <td>Student 5th grade</td>
-              <td>Desire to be seen as a tastemaker for her friends. Hears about new music from older sister in middle school.</td>
-            </tr>  
+			{{/each}}
+			<tr>
+			<td></td><td></td>
+			</tr>
           </tbody>          
         </table>
       </div>
-      <div class="col-md-6">
-        <img src="http://lorempixel.com/g/520/150/technics" alt="Lorem Pixel image" class="img">
-      </div>
+     
     </div>
 
-		<p>Sed vitae ultricies magna. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce pulvinar sapien eget lacus volutpat suscipit. Duis bibendum condimentum sapien, quis vulputate turpis ultricies sit amet. Quisque sollicitudin vitae ipsum vel scelerisque. Aliquam facilisis eros eros, in ultricies erat aliquam nec. Suspendisse nec egestas arcu. Sed nec malesuada turpis. Proin eu lorem sed mauris bibendum consectetur sit amet mattis arcu. Aliquam porta ligula in nulla ullamcorper, at pulvinar diam porta.</p>
-
+		
     <p><a href="index.html">Back &raquo;</a></p>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

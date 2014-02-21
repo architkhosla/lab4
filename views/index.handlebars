@@ -20,7 +20,7 @@
 			function myFunction()
 			{
 			var search_txt = document.getElementById("search_box").value;
-			window.location.replace("http://localhost:3000/project/" + search_txt);
+			window.location.replace("../project/" + search_txt);
 			}
 		</script>
 </head>
@@ -70,13 +70,17 @@
 		
 		{{#each projects}}
 		<div class="thumbnail" id="{{id}}">
-		
+		<H3>{{name}}</H3>
 		  <div class=" thumbnail">
+			
 			<img src="images/{{image}}" class="img-polaroid">
 			</div>
-			{{#each recipe}} <p>{{item}}</p> {{/each}}
+			{{#each recipe}} <strong>{{item}}</strong> 
+								from
+								<strong>{{restraunt}}</strong>
+								<br>{{/each}}
 			
-			<p>{{name}}</p>
+			
 			
 		  
 		</div>
