@@ -1,43 +1,28 @@
 exports.viewProject = function(req, res) {
 	 var name = req.params.name;
   console.log("The project name is: " + name);
+  /*fries comparison info*/
   
+
   res.render('project', {
 	'projectName': name,
     'restraunts': [
-      { 'name': 'Waiting in Line',
+      { 'name': 'McDonalds',
         'id': 'project1',
-		'description': 'Best restraunt',
-		'price': '44.00'
+		'description': 'Famous for its Golden Arches',
+		'price': '1.50'
       },
-      { 'name': 'Needfinding',
-        'image': 'lorempixel.city.1.jpeg',
-        'id': 'project2'
+      { 'name': 'Santorini',
+        'id': 'project2',
+    'description': 'Famous Greek Grill',
+    'price': '2.50'
       },
-      { 'name': 'Prototyping',
-        'image': 'lorempixel.technics.1.jpeg',
-        'id': 'project3'
+      { 'name': 'Burger King',
+        'id': 'project3',
+    'description': 'Where Taste is King',
+    'price': '2.00'
       },
-      { 'name': 'Heuristic Evaluation',
-        'image': 'lorempixel.abstract.1.jpeg',
-        'id': 'project4'
-      },
-      { 'name': 'Visualization',
-        'image': 'lorempixel.abstract.8.jpeg',
-        'id': 'project5'
-      },
-      { 'name': 'Social design',
-        'image': 'lorempixel.people.2.jpeg',
-        'id': 'project6'
-      },
-      { 'name': 'Gestural interaction',
-        'image': 'lorempixel.technics.2.jpeg',
-        'id': 'project7'
-      },
-      { 'name': 'Design tools',
-        'image': 'lorempixel.city.2.jpeg',
-        'id': 'project8'
-      }
+      
     ]
   });
 };

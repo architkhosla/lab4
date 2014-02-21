@@ -7,7 +7,17 @@
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
     <link href="/css/introHCI.css" rel="stylesheet">
-
+	<script>
+		
+		function myFunction()
+			{
+			var search_txt = document.getElementById("search_box").value;
+			window.location.replace("../project/" + search_txt);
+			}
+			
+		
+	</script>
+	
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -31,7 +41,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class=""><a href="../">Home</a></li>
-            <li><a href="../">Cart</a></li>
+            <li><a href="../cart">Cart</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -53,7 +63,7 @@
 	
 	<div class="container">
 		<div class="jumbotron">
-  			<h1 align="center" >Item: <strong>{{projectName}}</strong></h1>
+  			<h1 align="center" >Item: <strong><span id="{{projectName}}">{{projectName}}</span></strong></h1>
   			
 		</div>
 
@@ -66,22 +76,26 @@
           <img src="../images/abc2.jpg" class="img-responsive center-block"  >
 		  <br>
           <tbody>
+		  
 		  {{#each restraunts}}
-            <tr>
-              <td>{{name}}</td>
+            <tr id="{{id}}">
+              <td id="{{name}}" >{{name}}</td>
              <td>
 				<div>
-					<strong>Description: </strong>{{description}}
+					<strong>Description: </strong><span id="description">{{description}}</span>
 				</div>
 				<div>
-					<strong>Price: </strong>${{price}}
+					<strong>Price: </strong>$<span id="{{price}}">{{price}}<span>
 				</div>
 				<div>
 					<strong>Rating: </strong><img src="../images/stars.png" class="img" width="60">
 				</div>
+				<div>
 				
-				<div >
-				<a class="btn btn-danger btn-xs" href="#" align="right">Add</a>
+				
+				
+				<input type="submit" id="submitBtn" class="btn btn-danger btn-xs" value="Add to Cart" onclick="addIt({{name}},{{price}},{{../projectName}})"></input>
+				
 				</div>
 			</td>
             </tr>
@@ -89,18 +103,15 @@
 			<tr>
 			<td></td><td></td>
 			</tr>
+			
           </tbody>          
         </table>
       </div>
      
     </div>
 
-		
-    <p><a href="index.html">Back &raquo;</a></p>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="/js/bootstrap.min.js"></script>
+	<script src="/js/introHCI.js"></script>
   </body>
 </html>
